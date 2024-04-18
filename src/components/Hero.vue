@@ -19,7 +19,7 @@ export default {
         </a>
       </div>
       <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-        <img src="../assets/images/beer2.jpg" alt="mockup" class="rounded-md">
+        <img src="../assets/images/beer.jpg" alt="mockup" class="rounded-md">
       </div>
     </div>
   </section>
