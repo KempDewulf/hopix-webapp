@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-header border-gray-200 sticky top-0">
+  <nav class="bg-header z-50 border-gray-200 sticky top-0">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <router-link to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="/src/assets/images/logo.svg" class="h-8" alt="Hopix Logo" />

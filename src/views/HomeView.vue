@@ -3,8 +3,7 @@ import Hero from "@/components/Hero.vue";
 </script>
 
 <template>
-  <main>
-
+  <main class="min-h-screen relative">
     <Hero/>
   </main>
 </template>

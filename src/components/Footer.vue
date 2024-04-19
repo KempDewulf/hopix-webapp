@@ -11,7 +11,7 @@ export default {
         <img src="/src/assets/images/logo.svg" class="h-8" alt="Hopix Logo" />
         <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Hopix</span>
       </router-link>
-      <span class="text-sm text-gray-400 self-center sm:text-center">
+      <span class="text-[10px] md:text-sm text-gray-400 self-center sm:text-center">
         Copyright © 2024
         <router-link to="/" class="hover:underline">Hopix™</router-link>.
         All Rights Reserved.
