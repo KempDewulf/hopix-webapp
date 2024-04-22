@@ -4,7 +4,7 @@ import BeerCards from "@/components/BeerCards.vue";
 </script>
 
 <template>
-  <main>
+  <main class="min-h-screen">
     <Hero/>
     <BeerCards class="mb-5"/>
   </main>
