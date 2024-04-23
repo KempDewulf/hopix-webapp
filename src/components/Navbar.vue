@@ -1,10 +1,10 @@
 <template>
   <nav class="bg-header z-50 border-gray-200 sticky top-0">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <router-link to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <RouterLink to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="/src/assets/images/logo.svg" class="h-8" alt="Hopix Logo" />
         <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Hopix</span>
-      </router-link>
+      </RouterLink>
       <div class="flex md:order-2">
         <div class="relative hidden md:block">
           <input @keyup.enter="performSearch" type="text" id="search-navbar" class="block w-full p-2 ps-2 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
@@ -33,16 +33,16 @@
         </div>
         <ul class="flex flex-col  md:p-0 mt-4 font-medium rounded-lg bg-header md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-header dark:h md:dark:bg-header dark:border-gray-700">
           <li>
-            <router-link to="/" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">Home</router-link>
+            <RouterLink to="/" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">Home</RouterLink>
           </li>
           <li>
-            <router-link to="/beers" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">All beers</router-link>
+            <RouterLink to="/beers" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">All beers</RouterLink>
           </li>
           <li>
-            <router-link to="/categories" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">Categories</router-link>
+            <RouterLink to="/categories" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">Categories</RouterLink>
           </li>
           <li>
-            <router-link to="/top" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">Top 100</router-link>
+            <RouterLink to="/top" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">Top 100</RouterLink>
           </li>
         </ul>
       </div>
