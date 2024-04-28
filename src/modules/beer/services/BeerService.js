@@ -1,6 +1,6 @@
 "use strict";
 
-const BASE_URL = 'https://hopix-api.test/api/beers';
+const BASE_URL = 'https://hopix.test/api/beers';
 
 export default class BeerService {
     async all(search) {
