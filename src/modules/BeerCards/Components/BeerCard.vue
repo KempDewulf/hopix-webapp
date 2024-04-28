@@ -40,7 +40,7 @@ export default {
   },
   async created() {
     try {
-      const { default: image } = await import(`/src/assets/images/${this.slug}.jpg`);
+      const { default: image } = await import(`../../../assets/images/${this.slug}.jpg`);
       this.imagePath = image;
     } catch (error) {
       console.error(`Failed to load image for ${this.slug}:`, error);

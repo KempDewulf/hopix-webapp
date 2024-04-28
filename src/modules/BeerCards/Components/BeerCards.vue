@@ -1,17 +1,32 @@
 <script>
-import BeerCard from "@/modules/Beers/Components/BeerCard.vue";
-import BeerService from "@/modules/Beers/Services/BeerService.js";
+import BeerCard from "@/modules/BeerCards/Components/BeerCard.vue";
+import BeerCardService from "@/modules/BeerCards/Services/BeerCardService.js";
 
 export default {
   name: "BeerCards",
   data() {
     return {
-      search: "",
-      BeerService: new BeerService(),
+      BeerService: new BeerCardService(),
       beers: [],
-      loaded: false,
-      amountOfBeersToDisplay: 6,
     };
+  },
+  props: {
+    perPage: {
+      type: Number,
+      default: 8
+    },
+    page: {
+      type: Number,
+      default: 1
+    },
+    sortBy: {
+      type: String,
+      default: "rating-htl"
+    },
+    search: {
+      type: String,
+      default: null
+    }
   },
   components: {BeerCard},
   created() {
@@ -19,9 +34,8 @@ export default {
   },
   methods: {
     async fetchBeers() {
-      const allBeers = await this.BeerService.all(this.search);
-      const sortedBeers = allBeers.data.sort((a, b) => this.calculateRating(b) - this.calculateRating(a));
-      this.beers = sortedBeers.slice(0, this.amountOfBeersToDisplay);
+      const allBeers = await this.BeerService.all(this.page, this.perPage, this.sortBy, this.search);
+      this.beers = allBeers.data;
     },
     calculateRating(beer) {
       if (beer.amount_of_ratings === 0) {
