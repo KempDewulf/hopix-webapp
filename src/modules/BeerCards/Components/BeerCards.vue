@@ -48,7 +48,7 @@ export default {
 </script>
 
 <template>
-  <div class="w-3/4 mx-auto">
+  <div class="mx-auto px-3 2xl:max-w-[80rem]">
     <div class="flex flex-wrap justify-center gap-4">
       <beer-card  v-for="beer in beers" :key="beer.id" :name="beer.name" :rating="calculateRating(beer)" :amount-of-ratings="beer.amount_of_ratings" :description="beer.description"/>
       <!--
