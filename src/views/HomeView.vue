@@ -1,12 +1,16 @@
-<script setup>
+<script>
 import Hero from "@/modules/HeroPage/Components/Hero.vue";
-import BeerCards from "@/modules/BeerCards/Components/BeerCards.vue";
 import HeroTrendingBeers from "@/modules/HeroPage/Components/HeroTrendingBeers.vue";
+
+export default {
+  components: {HeroTrendingBeers, Hero}
+}
+
 </script>
 
 <template>
   <main class="min-h-screen">
-    <Hero/>
-    <HeroTrendingBeers/>
+    <hero/>
+    <hero-trending-beers/>
   </main>
 </template>

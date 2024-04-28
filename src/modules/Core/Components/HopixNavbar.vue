@@ -1,10 +1,32 @@
+<script>
+import { initFlowbite} from 'flowbite'
+
+export default {
+  name: "HopixNavbar",
+  data() {
+    return {
+      isMenuOpen: false,
+    };
+  },
+  mounted() {
+    initFlowbite();
+  },
+  methods: {
+    performSearch() {
+      /*TODO*/
+      console.log('search');
+    },
+  },
+}
+</script>
+
 <template>
   <nav class="bg-header z-50 border-gray-200 sticky top-0">
-    <div class="h-24 max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <RouterLink to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 md:h-24 ">
+      <router-link to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="/src/assets/images/logo.svg" class="h-8" alt="Hopix Logo" />
         <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Hopix</span>
-      </RouterLink>
+      </router-link>
       <div class="flex md:order-2">
         <div class="relative hidden md:block">
           <input @keyup.enter="performSearch" type="text" id="search-navbar" class="block w-full p-2 ps-2 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
@@ -33,16 +55,16 @@
         </div>
         <ul class="flex flex-col  md:p-0 mt-4 font-medium rounded-lg bg-header md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-header dark:h md:dark:bg-header dark:border-gray-700">
           <li>
-            <RouterLink to="/" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">Home</RouterLink>
+            <router-link to="/" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">Home</router-link>
           </li>
           <li>
-            <RouterLink to="/beers" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">All beers</RouterLink>
+            <router-link to="/beers" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">All beers</router-link>
           </li>
           <li>
-            <RouterLink to="/categories" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">Categories</RouterLink>
+            <router-link to="/categories" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">Categories</router-link>
           </li>
           <li>
-            <RouterLink to="/top" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">Top 100</RouterLink>
+            <router-link to="/top" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">Top 100</router-link>
           </li>
         </ul>
       </div>
@@ -59,27 +81,3 @@
     </div>
   </nav>
 </template>
-
-<script>
-import { initFlowbite} from 'flowbite'
-
-export default {
-  name: "Navbar",
-  computed: {
-  },
-  data() {
-    return {
-      isMenuOpen: false,
-    };
-  },
-  methods: {
-    performSearch() {
-      /*TODO*/
-      console.log('search');
-    },
-  },
-  mounted() {
-    initFlowbite();
-  },
-}
-</script>

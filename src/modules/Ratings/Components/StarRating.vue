@@ -1,5 +1,5 @@
 <script>
-import Star from "@/modules/Ratings/Components/Star.vue";
+import Star from "@/modules/Ratings/Components/StarItem.vue";
 
 export default {
   name: "StarRating",
@@ -46,12 +46,8 @@ export default {
 <template>
   <div class="flex items-center flex-col md:flex-row" v-if="isValidRating">
     <div class="flex flex-row">
-      <Star v-for="starIndex in 5" :key="starIndex" :fill="getStarType(starIndex)" />
+      <star v-for="starIndex in 5" :key="starIndex" :fill="getStarType(starIndex)" />
     </div>
-    <RouterLink :to="ratingLink" class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400 hover:underline hover:cursor-pointer">{{amountOfRatings}} ratings</RouterLink>
+    <router-link :to="ratingLink" class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400 hover:underline hover:cursor-pointer">{{amountOfRatings}} ratings</router-link>
   </div>
 </template>
-
-<style scoped>
-
-</style>

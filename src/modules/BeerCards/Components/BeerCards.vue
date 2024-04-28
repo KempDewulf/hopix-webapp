@@ -4,12 +4,7 @@ import BeerCardService from "@/modules/BeerCards/Services/BeerCardService.js";
 
 export default {
   name: "BeerCards",
-  data() {
-    return {
-      BeerService: new BeerCardService(),
-      beers: [],
-    };
-  },
+  components: {BeerCard},
   props: {
     perPage: {
       type: Number,
@@ -28,7 +23,12 @@ export default {
       default: null
     }
   },
-  components: {BeerCard},
+  data() {
+    return {
+      BeerService: new BeerCardService(),
+      beers: [],
+    };
+  },
   created() {
     this.fetchBeers();
   },
@@ -51,14 +51,6 @@ export default {
   <div class="mx-auto px-3 2xl:max-w-[80rem]">
     <div class="flex flex-wrap justify-center gap-4">
       <beer-card  v-for="beer in beers" :key="beer.id" :name="beer.name" :rating="calculateRating(beer)" :amount-of-ratings="beer.amount_of_ratings" :description="beer.description"/>
-      <!--
-      <BeerCard name="Tripel Karmeliet" :rating="4.5" :amount-of-ratings="153" description="Tripel Karmeliet is een wereldberoemde Tripel gebrouwen van gerst, tarwe en haver volgens een recept uit 1679. De goudgele bier heeft een enorme fluffy schuimkraag en zit vol verfijnde fruitige aroma's. Als bij de eerste slok weet je waarom deze Tripel zo hoog aangeschreven staat bij bierliefhebbers uit de hele wereld. "/>
-      <BeerCard name="Westmalle Tripel" :rating="4.0" :amount-of-ratings="265" description="Westmalle Tripel is een van de bekendste Tripels ter wereld. Het bier is gebrouwen door de trappisten van de Abdij van Westmalle en heeft een fruitig aroma met een licht bittere afdronk."/>
-      -->
     </div>
   </div>
 </template>
-
-<style scoped>
-
-</style>

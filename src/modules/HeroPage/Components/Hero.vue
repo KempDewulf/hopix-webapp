@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-between h-[calc(100vh-6rem)]">
+  <div class="flex flex-col items-center justify-between h-[calc(100vh-4rem)] md:h-[calc(100vh-6rem)]">
     <section class="bg-white dark:bg-gray-900">
       <div class="grid max-w-screen-xl px-4 py-8 mt-[15vh] mx-auto lg:gap-8 xl:gap-0 lg:py-24 lg:grid-cols-12">
         <div class="mr-auto place-self-center lg:col-span-7">

@@ -1,23 +1,14 @@
-<script setup>
-import {RouterView} from 'vue-router'
-import Navbar from "@/modules/Core/Components/Navbar.vue";
-import Footer from "@/modules/Core/Components/Footer.vue";
+<script>
+import HopixFooter from "@/modules/Core/Components/HopixFooter.vue";
+import HopixNavbar from "@/modules/Core/Components/HopixNavbar.vue";
+
+export default {
+  components: {HopixNavbar, HopixFooter},
+}
 </script>
 
 <template>
-  <Navbar/>
-  <RouterView class="min-h-screen relative"/>
-  <Footer/>
+  <hopix-navbar/>
+  <router-view class="min-h-screen relative"/>
+  <hopix-footer/>
 </template>
-
-<style scoped>
-
-</style>
-
-<script>
-export default {
-  data: () => ({
-    tab: null,
-  }),
-}
-</script>

@@ -4,7 +4,7 @@ import IconStarHalf from "@/modules/Ratings/Icons/IconStarHalf.vue";
 import IconStarEmpty from "@/modules/Ratings/Icons/IconStarEmpty.vue";
 
 export default {
-  name: "Star",
+  name: "StarItem",
   components: {IconStarEmpty, IconStarHalf, IconStarFull},
   props: {
     fill: {
@@ -15,16 +15,13 @@ export default {
       },
     },
   },
-};
+}
 </script>
+
 <template>
   <div style="position: relative;">
-    <IconStarFull v-if="fill === 'full'"/>
-    <IconStarHalf v-else-if="fill === 'half'"/>
-    <IconStarEmpty v-else-if="fill === 'empty'"/>
+    <icon-star-full v-if="fill === 'full'"/>
+    <icon-star-half v-else-if="fill === 'half'"/>
+    <icon-star-empty v-else-if="fill === 'empty'"/>
   </div>
 </template>
-
-<style scoped>
-
-</style>
