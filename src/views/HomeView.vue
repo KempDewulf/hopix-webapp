@@ -1,6 +1,6 @@
 <script setup>
-import Hero from "@/components/Hero.vue";
-import BeerCards from "@/components/BeerCards.vue";
+import Hero from "@/modules/Core/Components/Hero.vue";
+import BeerCards from "@/modules/Beers/Components/BeerCards.vue";
 </script>
 
 <template>

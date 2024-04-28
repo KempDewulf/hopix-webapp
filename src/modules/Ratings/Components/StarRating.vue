@@ -1,5 +1,5 @@
 <script>
-import Star from "@/components/Star.vue";
+import Star from "@/modules/Ratings/Components/Star.vue";
 
 export default {
   name: "StarRating",

@@ -1,6 +1,6 @@
 <script>
-import BeerCard from "@/components/BeerCard.vue";
-import BeerService from "@/modules/beer/services/BeerService.js";
+import BeerCard from "@/modules/Beers/Components/BeerCard.vue";
+import BeerService from "@/modules/Beers/Services/BeerService.js";
 
 export default {
   name: "BeerCards",

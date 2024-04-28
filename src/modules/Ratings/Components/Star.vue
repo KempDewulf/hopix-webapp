@@ -1,7 +1,7 @@
 <script>
-import IconStarFull from "@/components/icons/IconStarFull.vue";
-import IconStarHalf from "@/components/icons/IconStarHalf.vue";
-import IconStarEmpty from "@/components/icons/IconStarEmpty.vue";
+import IconStarFull from "@/modules/Ratings/Icons/IconStarFull.vue";
+import IconStarHalf from "@/modules/Ratings/Icons/IconStarHalf.vue";
+import IconStarEmpty from "@/modules/Ratings/Icons/IconStarEmpty.vue";
 
 export default {
   name: "Star",
