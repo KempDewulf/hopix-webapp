@@ -7,6 +7,6 @@ import HeroTrendingBeers from "@/modules/HeroPage/Components/HeroTrendingBeers.v
 <template>
   <main class="min-h-screen">
     <Hero/>
-    <HeroTrendingBeers class="mb-5"/>
+    <HeroTrendingBeers/>
   </main>
 </template>
