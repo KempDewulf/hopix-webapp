@@ -1,9 +1,16 @@
 <script>
 export default {
-  name: "CatalogBeerCards"
+  name: "CatalogBeerCards",
+  props: {
+    sort: String,
+    selectedBreweries: Array,
+    selectedAromas: Array
+  }
 }
 </script>
 
 <template>
-  <div class="bg-blue-400 w-full h-full"></div>
+  <div class="w-full">
+    <div class=""></div>
+  </div>
 </template>
