@@ -72,12 +72,6 @@ export default {
           <li>
             <router-link to="/beers" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">{{$t('all_beers')}}</router-link>
           </li>
-          <li>
-            <router-link to="/categories" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">{{$t('categories')}}</router-link>
-          </li>
-          <li>
-            <router-link to="/top" class="block py-2 px-3 text-white rounded md:p-0" exact-active-class="!text-hopix-yellow font-bold">{{$t('top_100')}}</router-link>
-          </li>
         </ul>
       </div>
       <div class="w-full flex items-center justify-between md:w-auto md:order-2">
