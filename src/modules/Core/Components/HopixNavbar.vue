@@ -8,6 +8,25 @@ export default {
       isMenuOpen: false,
     };
   },
+  computed: {
+    options() {
+      if (this.isFirefox()) {
+        return [
+          { value: 'EN', text: '🇬🇧 EN' },
+          { value: 'NL', text: '🇳🇱 NL' },
+          { value: 'FR', text: '🇫🇷 FR' },
+          { value: 'DE', text: '🇩🇪 DE' },
+        ];
+      } else {
+        return [
+          { value: 'EN', text: 'EN' },
+          { value: 'NL', text: 'NL' },
+          { value: 'FR', text: 'FR' },
+          { value: 'DE', text: 'DE' },
+        ];
+      }
+    },
+  },
   mounted() {
     initFlowbite();
   },
@@ -15,6 +34,9 @@ export default {
     performSearch() {
       /*TODO*/
       console.log('search');
+    },
+    isFirefox() {
+      return navigator.userAgent.includes('Firefox');
     },
   },
 }
@@ -71,10 +93,7 @@ export default {
       <div :class="{'hidden': !isMenuOpen}" class="md:flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
         <form class="max-w-md mx-auto">
           <select id="countries" class="bg-header border-none focus:ring-0 text-white text-sm rounded-lg block w-fit">
-            <option selected value="EN">🇬🇧 EN</option>
-            <option value="NL">🇳🇱 NL</option>
-            <option value="FR">🇫🇷 FR</option>
-            <option value="DE">🇩🇪 DE</option>
+            <option v-for="option in options" :value="option.value" :key="option.value">{{ option.text }}</option>
           </select>
         </form>
       </div>
