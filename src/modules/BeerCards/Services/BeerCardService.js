@@ -3,8 +3,9 @@
 const BASE_URL = 'https://hopix.test/api/beers';
 
 export default class BeerCardService {
-    async all(page, perPage, sortBy, search = null) {
-        let url = `${BASE_URL}?lang=BE_NL&page=${page}&per_page=${perPage}&sort_by=${sortBy}`;
+    static async all(page, perPage, sortBy, search = null) {
+        const language = localStorage.getItem("language");
+        let url = `${BASE_URL}?lang=${language}&page=${page}&per_page=${perPage}&sort_by=${sortBy}`;
         if (search) {
             url += `&search=${search}`;
         }
@@ -12,7 +13,7 @@ export default class BeerCardService {
         return response.json();
     }
 
-    async login() {
+    static async login() {
         let url = `https://hopix.test/api/login`;
         let body = {
             email: 'admin@admin.com',
@@ -31,7 +32,7 @@ export default class BeerCardService {
         return response.json();
     }
 
-    async profile() {
+    static async profile() {
         let url = `https://hopix.test/api/profile`;
 
         const response = await fetch(url, {

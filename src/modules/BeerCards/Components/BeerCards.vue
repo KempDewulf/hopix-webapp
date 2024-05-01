@@ -25,7 +25,6 @@ export default {
   },
   data() {
     return {
-      BeerService: new BeerCardService(),
       beers: [],
     };
   },
@@ -34,7 +33,7 @@ export default {
   },
   methods: {
     async fetchBeers() {
-      const allBeers = await this.BeerService.all(this.page, this.perPage, this.sortBy, this.search);
+      const allBeers = await BeerCardService.all(this.page, this.perPage, this.sortBy, this.search);
       this.beers = allBeers.data;
     },
     calculateRating(beer) {

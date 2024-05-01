@@ -48,6 +48,7 @@ export default {
     <div class="flex flex-row">
       <star v-for="starIndex in 5" :key="starIndex" :fill="getStarType(starIndex)" />
     </div>
-    <router-link :to="ratingLink" class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400 hover:underline hover:cursor-pointer">{{amountOfRatings}} ratings</router-link>
+    <router-link :to="ratingLink" class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400 hover:underline hover:cursor-pointer">{{amountOfRatings}}
+      {{ $t('ratings') }}</router-link>
   </div>
 </template>

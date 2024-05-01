@@ -12,6 +12,13 @@ export default {
             'hopix-yellow': '#FFBD4A',
             'hopix-gray': '#4F4F4F',
         },
+        screens: {
+            'sm': '640px',
+            'md': '900px',
+            'lg': '1024px',
+            'xl': '1280px',
+            '2xl': '1536px',
+        },
         extend: {},
     },
     plugins: [
