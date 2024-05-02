@@ -1,14 +1,32 @@
 <script>
 import BeerCards from "@/modules/BeerCards/Components/BeerCards.vue";
+import BeerCardService from "@/modules/BeerCards/Services/BeerCardService.js";
 
 export default {
   name: "HeroTrendingBeers",
-  components: {BeerCards}
+  components: {BeerCards},
+  data() {
+    return {
+      beers: [],
+      perPage: 6,
+      currentPage: 1,
+      sort: "rating",
+    };
+  },
+  created() {
+    this.fetchBeers();
+  },
+  methods: {
+    async fetchBeers() {
+      const response = await BeerCardService.all(this.currentPage, this.perPage, this.sort,);
+      this.beers = response.data;
+    },
+  }
 }
 </script>
 
 <template >
-  <beer-cards :per-page=6 />
+  <beer-cards :beers="beers" />
   <div class="w-full inline-flex items-center justify-center">
     <router-link to="/beers" class="group text-4xl px-auto my-10">
       <p class="inline-block pr-3 font-primary font-bold text-hopix-gray ">{{ $t('see_all_beers') }}</p>
