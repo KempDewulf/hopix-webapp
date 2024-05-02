@@ -18,6 +18,8 @@ export default class BeerCardService {
         return response.json();
     }
 
+
+    //TODO: move to account service
     static async login() {
         let url = `https://hopix.test/api/login`;
         let body = {
