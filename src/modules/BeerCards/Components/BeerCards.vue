@@ -1,41 +1,13 @@
 <script>
 import BeerCard from "@/modules/BeerCards/Components/BeerCard.vue";
-import BeerCardService from "@/modules/BeerCards/Services/BeerCardService.js";
 
 export default {
   name: "BeerCards",
   components: {BeerCard},
   props: {
-    perPage: {
-      type: Number,
-      default: 8
-    },
-    page: {
-      type: Number,
-      default: 1
-    },
-    sortBy: {
-      type: String,
-      default: "rating-htl"
-    },
-    search: {
-      type: String,
-      default: null
-    }
-  },
-  data() {
-    return {
-      beers: [],
-    };
-  },
-  created() {
-    this.fetchBeers();
+    beers: Array,
   },
   methods: {
-    async fetchBeers() {
-      const allBeers = await BeerCardService.all(this.page, this.perPage, this.sortBy, this.search);
-      this.beers = allBeers.data;
-    },
     calculateRating(beer) {
       if (beer.amount_of_ratings === 0) {
         return 0;

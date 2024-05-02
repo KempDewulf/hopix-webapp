@@ -13,6 +13,11 @@ export default class BeerCardService {
         return response.json();
     }
 
+    static async fetchPage(url) {
+        const response = await fetch(url);
+        return response.json();
+    }
+
     static async login() {
         let url = `https://hopix.test/api/login`;
         let body = {
