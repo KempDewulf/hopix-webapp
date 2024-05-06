@@ -27,7 +27,7 @@ export default {
 <template>
   <div class="w-full my-10">
     <beer-cards :beers="beers"/>
-    <div class="w-full pt-10">
+    <div v-if="beers.length >= 1" class="w-full pt-10">
       <custom-pagination :link-data="linkData" @page-changed="$emit('page-changed', $event)"/>
     </div>
   </div>

@@ -104,7 +104,7 @@ export default {
             <h2 class="text-lg font-primary font-bold text-hopix-gray">{{ $t('brewery') }}</h2>
             <ul class="overflow-y-auto h-36 w-3/4 border-y-2 px-1 whitespace-nowrap overflow-x-hidden text-ellipsis">
               <li v-for="brewery in breweries" class="text-ellipsis overflow-hidden">
-                <input :id="brewery.id" type="checkbox" :value="brewery.id" v-model="selectedBreweries" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <input :id="brewery.id" type="checkbox" :value="brewery.id" v-model="selectedBreweries" class="m-1 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                 <label :for="brewery.id" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{brewery.name}}</label>
               </li>
             </ul>
@@ -113,7 +113,7 @@ export default {
             <h2 class="text-lg font-primary font-bold text-hopix-gray">{{ $t('aroma') }}</h2>
             <ul class="overflow-y-auto h-36 w-3/4 border-y-2 px-1 whitespace-nowrap overflow-x-hidden text-ellipsis">
               <li v-for="aroma in aromas" class="text-ellipsis overflow-hidden">
-                <input :id="aroma.id" type="checkbox" :value="aroma.id" v-model="selectedAromas" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <input :id="aroma.id" type="checkbox" :value="aroma.id" v-model="selectedAromas" class="m-1 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                 <label :for="aroma.id" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"> {{aroma.name}}</label>
               </li>
             </ul>

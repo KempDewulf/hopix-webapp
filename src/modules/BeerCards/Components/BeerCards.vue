@@ -23,5 +23,8 @@ export default {
     <div class="flex flex-wrap justify-center gap-4">
       <beer-card  v-for="beer in beers" :key="beer.id" :name="beer.name" :rating="calculateRating(beer)" :amount-of-ratings="beer.amount_of_ratings" :description="beer.description"/>
     </div>
+    <div v-if="beers.length === 0" class="text-center py-20">
+      <p class="text-gray-400 font-primary font-bold text-3xl">No beers found</p>
+    </div>
   </div>
 </template>
