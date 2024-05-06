@@ -31,9 +31,12 @@ export default {
     },
     handleSelectedBreweriesChanged(newSelectedBreweries) {
       this.filters.breweries = newSelectedBreweries;
+      this.fetchBeers();
     },
     handleSelectedAromasChanged(newSelectedAromas) {
+      console.log(newSelectedAromas);
       this.filters.aromas = newSelectedAromas;
+      this.fetchBeers();
     },
     async fetchBeers(url) {
       const response = url ? await BeerCardService.fetchPage(url) : await BeerCardService.all(this.currentPage, this.perPage, this.sort, this.filters, this.search);

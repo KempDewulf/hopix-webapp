@@ -17,7 +17,7 @@ export default class BeerCardService {
         }
 
         if (filters?.aromas?.length > 0) {
-            params.aromas_ids = filters.aromas.join(',');
+            params.aroma_ids = filters.aromas.join(',');
         }
 
         if (search) {
