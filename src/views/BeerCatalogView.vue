@@ -9,8 +9,10 @@ export default {
   data() {
     return {
       sort: "rating",
-      selectedBreweries: [],
-      selectedAromas: [],
+      filters: {
+        breweries: [],
+        aromas: []
+      },
       beers: [],
       linkData: {},
       perPage: 3,
@@ -28,13 +30,13 @@ export default {
       this.fetchBeers();
     },
     handleSelectedBreweriesChanged(newSelectedBreweries) {
-      this.selectedBreweries = newSelectedBreweries;
+      this.filters.breweries = newSelectedBreweries;
     },
     handleSelectedAromasChanged(newSelectedAromas) {
-      this.selectedAromas = newSelectedAromas;
+      this.filters.aromas = newSelectedAromas;
     },
     async fetchBeers(url) {
-      const response = url ? await BeerCardService.fetchPage(url) : await BeerCardService.all(this.currentPage, this.perPage, this.sort, this.search);
+      const response = url ? await BeerCardService.fetchPage(url) : await BeerCardService.all(this.currentPage, this.perPage, this.sort, this.filters, this.search);
       this.beers = response.data;
 
       this.linkData = response;
