@@ -58,5 +58,3 @@ export default {
     <catalog-beer-cards class="md:order-2" :beers="beers" :link-data="linkData" @page-changed="handlePageChanged"/>
   </main>
 </template>
-
-#const response = await BeerCardService.all(this.currentPage, this.perPage, this.sort, this.search);

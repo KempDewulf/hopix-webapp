@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import PageNotFoundView from "@/views/PageNotFoundView.vue";
 import BeerCatalogView from "@/views/BeerCatalogView.vue";
+import BeerDetail from "@/modules/BeerDetail/Components/BeerDetail.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,6 +16,11 @@ const router = createRouter({
             path: '/beers',
             name: 'beerCatalog',
             component: BeerCatalogView
+        },
+        {
+            path: '/beers/d',
+            name: 'beerDetails',
+            component: BeerDetail
         },
         {
             path: '/:pathMatch(.*)*',

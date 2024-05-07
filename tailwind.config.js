@@ -11,6 +11,7 @@ export default {
             'header': '#282828',
             'hopix-yellow': '#FFBD4A',
             'hopix-gray': '#4F4F4F',
+            'hopix-light-gray': '#868686',
         },
         screens: {
             'sm': '640px',
