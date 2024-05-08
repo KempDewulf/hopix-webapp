@@ -20,6 +20,10 @@ export default {
       type: String,
       required: true,
     },
+    hideRatings: {
+      type: Boolean,
+      default: false,
+    }
   },
   computed: {
     isValidRating() {
@@ -48,7 +52,7 @@ export default {
     <div class="flex flex-row">
       <star v-for="starIndex in 5" :key="starIndex" :fill="getStarType(starIndex)" />
     </div>
-    <router-link :to="ratingLink" class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400 hover:underline hover:cursor-pointer">{{amountOfRatings}}
+    <router-link :to="ratingLink" v-if="!hideRatings" class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400 hover:underline hover:cursor-pointer">{{amountOfRatings}}
       {{ $t('ratings') }}</router-link>
   </div>
 </template>

@@ -10,9 +10,12 @@ export default {
 
 <template>
   <div class="mx-auto max-w-screen-xl px-4">
-    <div class="my-5 ms-5 flex items-center justify-center w-fit p-2.5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700">
-      <- Back
-    </div>
+    <router-link to="/" class="my-5 ms-5 flex items-center justify-between w-fit p-2.5 text-hopix-gray font-primary font-bold focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700">
+      <svg width="16" height="16" viewBox="0 0 65 65" fill="" xmlns="http://www.w3.org/2000/svg">
+        <path class="fill-hopix-yellow" d="M64.3239 28.5H15.6439L38.0039 6.14L32.3239 0.5L0.323853 32.5L32.3239 64.5L37.9639 58.86L15.6439 36.5H64.3239V28.5Z" fill="black"/>
+      </svg>
+      <p class="ml-2">Back</p>
+    </router-link>
     <section class="pb-8 bg-white md:pb-16 dark:bg-gray-900 antialiased">
       <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
         <div class="flex flex-col md:flex-row">

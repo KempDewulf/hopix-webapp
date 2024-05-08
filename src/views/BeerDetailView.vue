@@ -1,14 +1,18 @@
 <script>
 import BeerDetail from "@/modules/BeerDetail/Components/BeerDetail.vue";
+import BeerReviewCards from "@/modules/BeerDetail/Components/BeerReviewCards.vue";
 
 export default {
   name: "BeerDetailView",
-  components: {BeerDetail}
+  components: {BeerReviewCards, BeerDetail}
 }
 </script>
 
 <template>
-  <beer-detail/>
+  <div>
+    <beer-detail/>
+    <beer-review-cards/>
+  </div>
 </template>
 
 <style scoped>

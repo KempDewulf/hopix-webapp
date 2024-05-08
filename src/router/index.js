@@ -2,7 +2,9 @@ import {createRouter, createWebHistory} from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import PageNotFoundView from "@/views/PageNotFoundView.vue";
 import BeerCatalogView from "@/views/BeerCatalogView.vue";
-import BeerDetail from "@/modules/BeerDetail/Components/BeerDetail.vue";
+import BeerDetailView from "@/views/BeerDetailView.vue";
+import LoginRegisterView from "@/views/LoginRegisterView.vue";
+import ProfileView from "@/views/ProfileView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,7 +22,24 @@ const router = createRouter({
         {
             path: '/beers/d',
             name: 'beerDetails',
-            component: BeerDetail
+            component: BeerDetailView
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: LoginRegisterView,
+            props: {isLogin: true}
+        },
+        {
+            path: '/register',
+            name: 'register',
+            component: LoginRegisterView,
+            props: {isLogin: false}
+        },
+        {
+            path: '/profile',
+            name: 'profile',
+            component: ProfileView
         },
         {
             path: '/:pathMatch(.*)*',

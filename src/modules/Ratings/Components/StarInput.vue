@@ -40,6 +40,6 @@ export default {
 
 <template>
   <div class="flex" @mouseleave="resetHoverRating">
-    <star-item class="scale-150 w-6 ml-5" v-for="(fill, index) in stars" :key="index" :fill="fill" @mouseover="setHoverRating(index + 1)" @click="setRating(index + 1)"/>
+    <star-item class="scale-150 w-6 ml-5 cursor-pointer" v-for="(fill, index) in stars" :key="index" :fill="fill" @mouseover="setHoverRating(index + 1)" @click="setRating(index + 1)"/>
   </div>
 </template>
