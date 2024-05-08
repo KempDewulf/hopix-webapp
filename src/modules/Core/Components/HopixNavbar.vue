@@ -42,6 +42,7 @@ export default {
         const response = await AuthenticationService.logout();
         if (response.status === true) {
           this.$store.commit('SET_LOGIN_STATE', false);
+          await this.$router.push("/");
         }
       } catch (error) {
         console.error(error);

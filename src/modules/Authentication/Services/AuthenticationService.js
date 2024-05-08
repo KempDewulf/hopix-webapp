@@ -41,6 +41,19 @@ export default class AuthenticationService {
         return response.json();
     }
 
+    static async isLoggedIn() {
+        let url = `${BASE_URL}logged-in`;
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'credentials': 'include'
+            },
+            credentials: 'include'
+        });
+        return response.json();
+    }
+
     static async logout() {
         let url = `${BASE_URL}logout`;
 
