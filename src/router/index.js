@@ -7,6 +7,7 @@ import LoginRegisterView from "@/views/LoginRegisterView.vue";
 import ProfileView from "@/views/ProfileView.vue";
 import BackOfficeView from "@/views/BackOfficeView.vue";
 import store from "@/store.js";
+import AuthenticationService from "@/modules/Authentication/Services/AuthenticationService.js"
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -59,7 +60,7 @@ const router = createRouter({
     },
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
     if (to.name === 'login' || to.name === 'register') {
         if (store.state.isLoggedIn) {
             next({ name: 'home' });
@@ -71,6 +72,13 @@ router.beforeEach((to, from, next) => {
             next();
         } else {
             next({ name: 'login' });
+        }
+    } else if (to.name === 'admin') {
+        const response = await AuthenticationService.isAdmin();
+        if (response.status) {
+            next();
+        } else {
+            next({ name: 'home' });
         }
     } else {
         next();

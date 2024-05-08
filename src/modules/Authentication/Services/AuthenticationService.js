@@ -54,6 +54,19 @@ export default class AuthenticationService {
         return response.json();
     }
 
+    static async isAdmin() {
+        let url = `${BASE_URL}is-admin`;
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'credentials': 'include'
+            },
+            credentials: 'include'
+        });
+        return response.json();
+    }
+
     static async logout() {
         let url = `${BASE_URL}logout`;
 
