@@ -3,7 +3,7 @@ import { initFlowbite} from 'flowbite'
 import TranslationService from "@/modules/Translations/Services/TranslationService.js";
 import {computed} from "vue";
 import {mapGetters, useStore} from "vuex";
-import AuthenticationService from "@/modules/Account/Services/AuthenticationService.js";
+import AuthenticationService from "@/modules/Authentication/Services/AuthenticationService.js";
 
 export default {
   name: "HopixNavbar",

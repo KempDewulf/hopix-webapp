@@ -1,6 +1,6 @@
 <script>
-import RegisterForm from "@/modules/Account/Components/RegisterForm.vue";
-import LoginForm from "@/modules/Account/Components/LoginForm.vue";
+import RegisterForm from "@/modules/Authentication/Components/RegisterForm.vue";
+import LoginForm from "@/modules/Authentication/Components/LoginForm.vue";
 
 export default {
   name: "LoginRegisterView",
@@ -18,7 +18,3 @@ export default {
   <login-form v-if="isLogin"/>
   <register-form v-else/>
 </template>
-
-<style scoped>
-
-</style>

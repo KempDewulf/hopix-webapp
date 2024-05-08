@@ -1,5 +1,5 @@
 <script>
-import AuthenticationService from "@/modules/Account/Services/AuthenticationService.js";
+import AuthenticationService from "@/modules/Authentication/Services/AuthenticationService.js";
 import router from "@/router/index.js";
 import store from "@/store.js";
 

@@ -6,7 +6,6 @@ import BeerDetailView from "@/views/BeerDetailView.vue";
 import LoginRegisterView from "@/views/LoginRegisterView.vue";
 import ProfileView from "@/views/ProfileView.vue";
 import BackOfficeView from "@/views/BackOfficeView.vue";
-import AuthenticationService from "@/modules/Account/Services/AuthenticationService.js";
 import store from "@/store.js";
 
 const router = createRouter({
