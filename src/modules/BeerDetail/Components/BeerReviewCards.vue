@@ -14,14 +14,9 @@ export default {
 </script>
 
 <template>
-  <div class="w-fit max-w-screen-xl mx-auto py-10">
-      <div class="flex justify-around flex-wrap gap-5">
-        <beer-review-card/>
-        <beer-review-card/>
-        <beer-review-card/>
-        <beer-review-card/>
-        <beer-review-card/>
-        <beer-review-card/>
+  <div id="ratings" class="w-fit max-w-screen-xl mx-auto py-10 pl-4">
+      <div class="flex justify-start flex-wrap gap-x-12 gap-y-5">
+        <beer-review-card v-for="review in reviews" :key="review.id" :review="review"/>
       </div>
   </div>
 </template>

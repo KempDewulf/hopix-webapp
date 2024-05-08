@@ -27,4 +27,8 @@ export default class BeerCardService {
     static async fetchAromasByBeerId(id) {
         return this.fetchBeerData(`${id}/aromas`);
     }
+
+    static async fetchBreweryByBeerId(id) {
+        return this.fetchBeerData(`${id}/brewery`);
+    }
 }

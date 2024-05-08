@@ -8,9 +8,6 @@ export default {
     rating: {
       type: Number,
       required: true,
-      validator: function(value) {
-        return value >= 0 && value <= 5 && value % 0.5 === 0;
-      },
     },
     amountOfRatings: {
       type: Number,

@@ -2,6 +2,8 @@
 import {initFlowbite} from "flowbite";
 import BreweryFilterService from "@/modules/Filters/Services/BreweryFilterService.js";
 import AromaFilterService from "@/modules/Filters/Services/AromaFilterService.js";
+import AromaService from "@/modules/BeerCards/Services/BeerCardService.js";
+import BreweryService from "@/modules/BeerCards/Services/BeerCardService.js";
 
 export default {
   name: "CatalogSidebar",
@@ -9,8 +11,6 @@ export default {
   emits: ['sort-changed', 'selected-breweries-changed', 'selected-aromas-changed'],
   data() {
     return {
-      BreweryService: new BreweryFilterService(),
-      AromaService: new AromaFilterService(),
       breweries: [],
       aromas: [],
       selectedBreweries: [],
@@ -39,10 +39,10 @@ export default {
   },
   methods: {
     async fetchBreweries() {
-      this.breweries = await this.BreweryService.all();
+      this.breweries = await BreweryFilterService.all();
     },
     async fetchAromas() {
-      this.aromas = await this.AromaService.all();
+      this.aromas = await AromaFilterService.all();
     },
   }
 }

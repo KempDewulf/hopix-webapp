@@ -10,6 +10,7 @@ export default {
   data() {
     return {
       beer : null,
+      brewery: null,
       reviews: [],
       aromas: []
     }
@@ -18,6 +19,7 @@ export default {
     await this.fetchBeer();
     await this.fetchReviews();
     await this.fetchAromas();
+    await this.fetchBrewery();
   },
   methods: {
     async fetchBeer() {
@@ -34,6 +36,11 @@ export default {
       const response = await BeerDetailService.fetchAromasByBeerId(this.beer.id);
       this.aromas = response.data;
       console.log(this.aromas);
+    },
+    async fetchBrewery() {
+      const response = await BeerDetailService.fetchBreweryByBeerId(this.beer.id);
+      this.brewery = response.data;
+      console.log(this.brewery);
     }
   }
 }
@@ -41,8 +48,8 @@ export default {
 </script>
 
 <template>
-  <div>
-    <beer-detail :beer="beer" :aromas="aromas"/>
+  <div v-if="beer && brewery">
+    <beer-detail :beer="beer" :brewery="brewery" :aromas="aromas"/>
     <beer-review-cards :reviews="reviews"/>
   </div>
 </template>

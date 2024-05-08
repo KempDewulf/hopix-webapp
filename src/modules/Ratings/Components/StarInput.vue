@@ -29,7 +29,6 @@ export default {
     },
     setHoverRating(rating) {
       this.hoverRating = rating;
-      console.log('Hover rating:', this.hoverRating);
     },
     resetHoverRating() {
       this.hoverRating = 0;
