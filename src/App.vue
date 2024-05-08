@@ -10,13 +10,16 @@ export default {
       language: this.$i18n.locale,
     };
   },
+  computed: {
+    isAdminRoute() {
+      return this.$route.name === 'admin'; // replace 'admin' with the actual name of your admin route
+    },
+  },
   async created() {
     const data = await TranslationService.getTranslations();
-    console.log(data);
     for (const language in data) {
       this.$i18n.setLocaleMessage(language, data[language]);
     }
-    console.log(this.$i18n.messages);
   },
   methods: {
     rerenderView(newLanguage) {
@@ -27,9 +30,9 @@ export default {
 </script>
 
 <template>
-  <hopix-navbar @language-changed="rerenderView"/>
-    <router-view :key="language" class="min-h-screen relative"/>
-  <hopix-footer/>
+  <hopix-navbar v-if="!isAdminRoute" @language-changed="rerenderView"/>
+  <router-view :key="language" class="min-h-screen relative"/>
+  <hopix-footer v-if="!isAdminRoute"/>
 </template>
 
 <style>

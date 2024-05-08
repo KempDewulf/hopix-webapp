@@ -5,6 +5,8 @@ import BeerCatalogView from "@/views/BeerCatalogView.vue";
 import BeerDetailView from "@/views/BeerDetailView.vue";
 import LoginRegisterView from "@/views/LoginRegisterView.vue";
 import ProfileView from "@/views/ProfileView.vue";
+import AdminDashboardView from "@/views/BackOfficeView.vue";
+import BackOfficeView from "@/views/BackOfficeView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +42,11 @@ const router = createRouter({
             path: '/profile',
             name: 'profile',
             component: ProfileView
+        },
+        {
+            path: '/admin',
+            name: 'admin',
+            component: BackOfficeView
         },
         {
             path: '/:pathMatch(.*)*',
