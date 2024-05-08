@@ -6,6 +6,8 @@ import BeerDetailView from "@/views/BeerDetailView.vue";
 import LoginRegisterView from "@/views/LoginRegisterView.vue";
 import ProfileView from "@/views/ProfileView.vue";
 import BackOfficeView from "@/views/BackOfficeView.vue";
+import AuthenticationService from "@/modules/Account/Services/AuthenticationService.js";
+import store from "@/store.js";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -57,5 +59,23 @@ const router = createRouter({
         return {top: 0}
     },
 })
+
+router.beforeEach((to, from, next) => {
+    if (to.name === 'login' || to.name === 'register') {
+        if (store.state.isLoggedIn) {
+            next({ name: 'home' });
+        } else {
+            next();
+        }
+    } else if (to.name === 'profile') {
+        if (store.state.isLoggedIn) {
+            next();
+        } else {
+            next({ name: 'login' });
+        }
+    } else {
+        next();
+    }
+});
 
 export default router

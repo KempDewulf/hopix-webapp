@@ -2,6 +2,7 @@
 import HopixFooter from "@/modules/Core/Components/HopixFooter.vue";
 import HopixNavbar from "@/modules/Core/Components/HopixNavbar.vue";
 import TranslationService from "@/modules/Translations/Services/TranslationService.js";
+import {mapGetters} from "vuex";
 
 export default {
   components: {HopixNavbar, HopixFooter},
@@ -12,8 +13,9 @@ export default {
   },
   computed: {
     isAdminRoute() {
-      return this.$route.name === 'admin'; // replace 'admin' with the actual name of your admin route
+      return this.$route.name === 'admin';
     },
+    ...mapGetters(['isLoggedIn'])
   },
   async created() {
     const data = await TranslationService.getTranslations();
@@ -30,7 +32,7 @@ export default {
 </script>
 
 <template>
-  <hopix-navbar v-if="!isAdminRoute" @language-changed="rerenderView"/>
+  <hopix-navbar v-if="!isAdminRoute" :key="isLoggedIn" @language-changed="rerenderView"/>
   <router-view :key="language" class="min-h-screen relative"/>
   <hopix-footer v-if="!isAdminRoute"/>
 </template>

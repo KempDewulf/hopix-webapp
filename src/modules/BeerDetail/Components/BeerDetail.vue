@@ -79,7 +79,7 @@ export default {
               </h2>
               <div class="sm:items-center sm:gap-4 sm:flex">
                 <div class="flex items-center gap-2 mt-2 sm:mt-0">
-                  <star-rating :rating="this.rating"  :amount-of-ratings="this.beer.amount_of_ratings" :rating-link="'/beers/' + this.$route.params.name + '#ratings'"/>
+                  <star-rating :rating="this.rating"  :amount-of-ratings="this.beer.amount_of_ratings" rating-link=""/>
                 </div>
               </div>
             </div>

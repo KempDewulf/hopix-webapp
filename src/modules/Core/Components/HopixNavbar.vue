@@ -1,14 +1,21 @@
 <script>
 import { initFlowbite} from 'flowbite'
 import TranslationService from "@/modules/Translations/Services/TranslationService.js";
+import {computed} from "vue";
+import {mapGetters, useStore} from "vuex";
+import AuthenticationService from "@/modules/Account/Services/AuthenticationService.js";
 
 export default {
   name: "HopixNavbar",
+  setup() {
+    const store = useStore();
+    const isLoggedIn = computed(() => store.state.isLoggedIn);
+    return { isLoggedIn };
+  },
   data() {
     return {
       isMenuOpen: false,
       selectedLanguage: null,
-      loggedIn: true,
     };
   },
   watch: {
@@ -30,7 +37,17 @@ export default {
     fetchDataInNewLanguage() {
       this.$emit('language-changed', this.selectedLanguage)
     },
-  },
+    async logout() {
+      try {
+        const response = await AuthenticationService.logout();
+        if (response.status === true) {
+          this.$store.commit('SET_LOGIN_STATE', false);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }
 }
 </script>
 
@@ -89,13 +106,13 @@ export default {
               <path d="M0.888672 0.748108L6.722 6.58144L12.5553 0.748108" class="stroke-hopix-yellow" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
-          <div id="dropdownAvatarName" v-if="loggedIn" class="z-10 hidden border-[rgb(107, 114, 128)] border-[1px] bg-header divide-y divide-gray-100 rounded-lg shadow w-32 dark:bg-gray-700 dark:divide-gray-600">
+          <div id="dropdownAvatarName" v-if="isLoggedIn" class="z-10 hidden border-[rgb(107, 114, 128)] border-[1px] bg-header divide-y divide-gray-100 rounded-lg shadow w-32 dark:bg-gray-700 dark:divide-gray-600">
             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
               <li>
                 <router-link to="/profile" class="block px-4 py-2 text-white hover:text-hopix-yellow">{{ $t('profile') }}</router-link>
               </li>
               <li>
-                <router-link to="/r" class="block px-4 py-2 text-white hover:text-hopix-yellow">{{ $t('logout') }}</router-link>
+                <a href="#" @click.prevent="logout" class="block px-4 py-2 text-white hover:text-hopix-yellow">{{ $t('logout') }}</a>
               </li>
             </ul>
           </div>
@@ -110,7 +127,7 @@ export default {
             </ul>
           </div>
         </div>
-        <div v-if="loggedIn" :class="{'hidden': !isMenuOpen}" class="md:hidden">
+        <div v-if="isLoggedIn" :class="{'hidden': !isMenuOpen}" class="md:hidden">
           <router-link to="/login" class="mr-14 md:hidden inline-flex items-center justify-center px-2 py-3 text-base font-medium text-center text-hopix-yellow focus:ring-4 focus:ring-gray-100">
             {{ $t('account') }}
           </router-link>
