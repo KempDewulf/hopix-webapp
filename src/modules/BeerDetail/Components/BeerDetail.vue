@@ -4,7 +4,17 @@ import StarInput from "@/modules/Ratings/Components/StarInput.vue";
 
 export default {
   name: "BeerDetail",
-  components: {StarInput, StarRating}
+  components: {StarInput, StarRating},
+  props: {
+    beer: {
+      type: Object,
+      required: true
+    },
+    aromas: {
+      type: Array,
+      required: true
+    }
+  }
 }
 </script>
 

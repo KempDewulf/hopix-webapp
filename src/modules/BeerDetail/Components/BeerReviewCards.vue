@@ -3,7 +3,13 @@ import BeerReviewCard from "@/modules/BeerDetail/Components/BeerReviewCard.vue";
 
 export default {
   name: "BeerReviewCards",
-  components: {BeerReviewCard}
+  components: {BeerReviewCard},
+  props: {
+    reviews: {
+      type: Array,
+      required: true
+    }
+  }
 }
 </script>
 
