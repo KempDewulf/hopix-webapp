@@ -12,7 +12,7 @@ export default class BeerCardService {
             sort_by: sortBy
         };
 
-        if (filters.breweries?.length > 0) {
+        if (filters?.breweries?.length > 0) {
             params.brewery_ids = filters.breweries.join(',');
         }
 

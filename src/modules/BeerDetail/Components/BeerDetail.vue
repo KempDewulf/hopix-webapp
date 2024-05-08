@@ -1,9 +1,10 @@
 <script>
 import StarRating from "@/modules/Ratings/Components/StarRating.vue";
+import StarInput from "@/modules/Ratings/Components/StarInput.vue";
 
 export default {
   name: "BeerDetail",
-  components: {StarRating}
+  components: {StarInput, StarRating}
 }
 </script>
 
@@ -20,7 +21,7 @@ export default {
           </div>
           <div class="mt-6 md:mt-8 md:w-full whitespace-nowrap overflow-x-hidden text-ellipsis">
             <div class="flex items-center justify-between mb-2">
-              <h1 class="text-2xl text-hopix-gray font-primary font-bold md:w-full md:text-4xl whitespace-nowrap overflow-hidden text-ellipsis dark:text-white">
+              <h1 class="text-2xl text-hopix-gray font-primary font-bold md:w-full md:text-4xl whitespace-nowrap overflow-x-hidden text-ellipsis dark:text-white">
                 Cornet Oaked
               </h1>
               <div class="sm:gap-4 sm:items-center sm:flex">
@@ -50,6 +51,61 @@ export default {
         </div>
       </div>
     </section>
+    <div class="flex flex-col gap-8 md:flex-row md:h-80">
+      <div class="md:w-[26rem] lg:h-full p-3 bg-white border border-gray-200 rounded-lg shadow">
+        <h2 class="text-hopix-gray text-xl font-primary font-bold pb-4 md:pb-10">
+          Details:
+        </h2>
+        <div class="flex justify-between font-primary">
+          <ul>
+            <li class="pb-1.5">Brewery</li>
+            <li class="pb-1.5">Beer style</li>
+            <li class="pb-1.5">ABV</li>
+            <li class="pb-1.5">Drinking temp</li>
+            <li class="pb-1.5">Aromas</li>
+            <li class="pb-1.5">IBU</li>
+          </ul>
+          <ul class="text-end text-hopix-text-gray">
+            <li class="pb-1.5">Sint-Sixtusabdij</li>
+            <li class="pb-1.5">Quadrupel</li>
+            <li class="pb-1.5">10.2%</li>
+            <li class="pb-1.5">12°C</li>
+            <li class="pb-1.5">Caramel, Malt</li>
+            <li class="pb-1.5">38</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grow p-3 px-5 mb-10 lg:h-full bg-white border border-gray-200 rounded-lg shadow">
+        <div class="md:flex align-middle">
+          <div class="md:inline-flex flex-col md:w-1/2">
+            <h2 class="text-hopix-gray text-xl font-primary font-bold pb-4">
+              Leave a review:
+            </h2>
+            <div class="mb-6">
+              <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Review</label>
+              <textarea id="message" rows="4" maxlength="259" class="md:w-full resize-none block p-2.5 w-full h-36 text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-hopix-yellow focus:border-hopix-yellow" placeholder="Write your thoughts here..."></textarea>
+            </div>
+          </div>
+          <div class="flex md:inline-block md:mt-20 align-middle md:mx-auto flex-col">
+            <div class="">
+              <h2>Rating:</h2>
+              <div class="py-5 -ml-2.5">
+                <star-input />
+              </div>
+            </div>
+            <div class="flex items-center w-fit pl-2 mx-auto mt-5">
+              <input checked id="checked-checkbox" type="checkbox" value="" class="w-4 h-4 text-hopix-yellow bg-gray-100 border-gray-300 rounded focus:ring-hopix-yellow">
+              <label for="checked-checkbox" class="ms-2 text-lg font-medium text-hopix-gray font-primary dark:text-gray-300">Show name</label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="w-full py-2 mt-6 md:mt-2 text-lg font-medium text-hopix-text-gray bg-hopix-yellow rounded-lg hover:bg-hopix-yellow-dark focus:ring-4 focus:outline-none focus:ring-hopix-yellow-dark dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
