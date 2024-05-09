@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     async fetchBeers() {
-      const response = await BeerCardService.all(this.currentPage, this.perPage, this.sort, null, this.sort);
+      const response = await BeerCardService.all(this.currentPage, this.perPage, this.sort, null);
       this.beers = response.data;
     },
   }
