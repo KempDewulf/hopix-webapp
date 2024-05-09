@@ -20,7 +20,8 @@ const router = createRouter({
         {
             path: '/beers',
             name: 'beerCatalog',
-            component: BeerCatalogView
+            component: BeerCatalogView,
+            props: {searchQuery: null}
         },
         {
             path: '/beers/:name',

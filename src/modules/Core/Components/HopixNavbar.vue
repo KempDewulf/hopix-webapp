@@ -2,7 +2,7 @@
 import { initFlowbite} from 'flowbite'
 import TranslationService from "@/modules/Translations/Services/TranslationService.js";
 import {computed} from "vue";
-import {mapGetters, useStore} from "vuex";
+import {useStore} from "vuex";
 import AuthenticationService from "@/modules/Authentication/Services/AuthenticationService.js";
 
 export default {
@@ -16,6 +16,7 @@ export default {
     return {
       isMenuOpen: false,
       selectedLanguage: null,
+      search: ''
     };
   },
   watch: {
@@ -31,8 +32,7 @@ export default {
   },
   methods: {
     performSearch() {
-      /*TODO*/
-      console.log('search');
+      this.$router.push({ name: 'beerCatalog', query: { search: this.search } });
     },
     fetchDataInNewLanguage() {
       this.$emit('language-changed', this.selectedLanguage)
@@ -61,8 +61,8 @@ export default {
       </router-link>
       <div class="flex md:order-2">
         <div class="relative hidden md:block">
-          <input @keyup.enter="performSearch" type="text" id="search-navbar" class="block w-full p-2 ps-2 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" :placeholder="$t('search')">
-          <div @click="performSearch" class="absolute inset-y-0 end-0 flex pe-5 items-center cursor-pointer">
+          <input v-model="search" type="text" id="search-navbar" class="block w-full p-2 ps-2 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" :placeholder="$t('search')">
+          <div @click="performSearch" role="button" class="absolute inset-y-0 end-0 flex pe-5 items-center cursor-pointer">
             <svg  class="w-4 h-4  text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
             </svg>
@@ -76,8 +76,8 @@ export default {
       </div>
       <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
         <div class="relative mt-3 md:hidden">
-          <input @keyup.enter="performSearch" type="text" id="search-navbar" class="block w-full p-2 ps-2 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
-          <div @click="performSearch" class="absolute inset-y-0 end-0 flex pe-5 items-center cursor-pointer">
+          <input v-model="search"  type="text" id="search-navbar" class="block w-full p-2 ps-2 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
+          <div @click="performSearch" role="button" class="absolute inset-y-0 end-0 flex pe-5 items-center cursor-pointer">
             <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
             </svg>

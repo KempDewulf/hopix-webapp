@@ -6,6 +6,12 @@ import BeerCardService from "@/modules/BeerCards/Services/BeerCardService.js";
 export default {
   name: "BeerCatalogView",
   components: {CatalogBeerCards, CatalogSidebar},
+  props: {
+    searchQuery: {
+      type: String,
+      default: null
+    }
+  },
   data() {
     return {
       sort: "rating",
@@ -18,11 +24,24 @@ export default {
       perPage: 3,
       currentPage: 1,
       totalPages: 1,
-      search: null,
+      search: null
     };
+  },
+  watch: {
+    '$route.query.search': {
+      immediate: true,
+      handler(newVal) {
+        this.search = newVal;
+        this.fetchBeers();
+      },
+    },
   },
   created() {
     this.fetchBeers();
+    if (this.search) {
+      this.search = this.$props.search;
+      console.log(this.search);
+    }
   },
   methods: {
     handleSortChanged(newSortValue) {
