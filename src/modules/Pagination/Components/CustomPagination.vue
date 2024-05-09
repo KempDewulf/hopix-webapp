@@ -38,6 +38,7 @@ export default {
         :disabled="link.url === null"
         @click="changePage(link.url)"
         class="pagination-button px-4 py-2 bg-gray-200 text-gray-700 rounded-md disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-300"
+        :class="{ 'bg-hopix-yellow': link.label === linkData.current_page.toString() }"
         v-html="link.label">
     </button>
   </div>

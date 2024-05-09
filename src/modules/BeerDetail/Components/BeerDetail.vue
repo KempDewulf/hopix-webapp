@@ -34,7 +34,6 @@ export default {
   async created() {
     this.rating = Math.round(this.beer.sum_ratings / this.beer.amount_of_ratings);
     this.aromaList = this.aromas.map(aroma => aroma.name);
-    this.aromaList.push("sour")
     try {
       const {default: image} = await import(`../../../assets/images/${this.slug}.jpg`);
       this.imagePath = image;

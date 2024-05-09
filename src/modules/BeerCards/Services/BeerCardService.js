@@ -9,7 +9,7 @@ export default class BeerCardService {
             lang: language,
             page: page,
             per_page: perPage,
-            sort_by: sortBy
+            sort_order: sortBy
         };
 
         if (filters?.breweries?.length > 0) {
