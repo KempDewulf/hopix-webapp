@@ -1,6 +1,6 @@
 <script>
 import BeerCards from "@/modules/BeerCards/Components/BeerCards.vue";
-import { FwbPagination } from 'flowbite-vue'
+import {FwbPagination} from 'flowbite-vue'
 import CustomPagination from "@/modules/Pagination/Components/CustomPagination.vue";
 
 export default {

@@ -2,8 +2,6 @@
 import {initFlowbite} from "flowbite";
 import BreweryFilterService from "@/modules/Filters/Services/BreweryFilterService.js";
 import AromaFilterService from "@/modules/Filters/Services/AromaFilterService.js";
-import AromaService from "@/modules/BeerCards/Services/BeerCardService.js";
-import BreweryService from "@/modules/BeerCards/Services/BeerCardService.js";
 
 export default {
   name: "CatalogSidebar",

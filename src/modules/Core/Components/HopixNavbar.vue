@@ -1,5 +1,5 @@
 <script>
-import { initFlowbite} from 'flowbite'
+import {initFlowbite} from 'flowbite'
 import TranslationService from "@/modules/Translations/Services/TranslationService.js";
 import {computed} from "vue";
 import {useStore} from "vuex";

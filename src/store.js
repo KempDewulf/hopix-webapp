@@ -1,4 +1,4 @@
-import { createStore } from 'vuex';
+import {createStore} from 'vuex';
 import AuthenticationService from "@/modules/Authentication/Services/AuthenticationService.js";
 
 const store = createStore({
