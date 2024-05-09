@@ -66,7 +66,7 @@ export default {
       <svg width="16" height="16" viewBox="0 0 65 65" fill="" xmlns="http://www.w3.org/2000/svg">
         <path class="fill-hopix-yellow" d="M64.3239 28.5H15.6439L38.0039 6.14L32.3239 0.5L0.323853 32.5L32.3239 64.5L37.9639 58.86L15.6439 36.5H64.3239V28.5Z" fill="black"/>
       </svg>
-      <p class="ml-2">Back</p>
+      <p class="ml-2">{{ $t('back') }}</p>
     </div>
     <section class="pb-8 bg-white md:pb-16 dark:bg-gray-900 antialiased">
       <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
@@ -113,10 +113,10 @@ export default {
         </h2>
         <div class="flex justify-between font-primary">
           <ul>
-            <li class="pb-1.5">Brewery</li>
-            <li class="pb-1.5">Beer style</li>
+            <li class="pb-1.5">{{ $t('brewery')}}</li>
+            <li class="pb-1.5">{{ $t('beer_style') }}</li>
             <li class="pb-1.5">ABV</li>
-            <li class="pb-1.5">Drinking temp</li>
+            <li class="pb-1.5">{{ $t('drink_temp') }}</li>
             <li class="pb-1.5">Aromas</li>
             <li class="pb-1.5">IBU</li>
           </ul>
@@ -134,11 +134,11 @@ export default {
         <div class="md:flex align-middle">
           <div class="md:inline-flex flex-col md:w-1/2">
             <h2 class="text-hopix-gray text-xl font-primary font-bold pb-4">
-              Leave a review:
+              {{ $t('leave_a_review') }}
             </h2>
             <div class="mb-6">
               <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Review</label>
-              <textarea id="message" v-model="newReview.review_text" rows="4" maxlength="259" class="md:w-full resize-none block p-2.5 w-full h-36 text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-hopix-yellow focus:border-hopix-yellow" placeholder="Write your thoughts here..."></textarea>
+              <textarea id="message" v-model="newReview.review_text" rows="4" maxlength="259" class="md:w-full resize-none block p-2.5 w-full h-36 text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-hopix-yellow focus:border-hopix-yellow" :placeholder="$t('write_your_thoughts_here')"></textarea>
             </div>
           </div>
           <div class="flex md:inline-block md:mt-20 align-middle md:mx-auto flex-col">
@@ -150,13 +150,13 @@ export default {
             </div>
             <div class="flex items-center w-fit pl-2 mx-auto mt-5">
               <input checked v-model="newReview.show_username" id="checked-checkbox" type="checkbox" value="" class="w-4 h-4 text-hopix-yellow bg-gray-100 border-gray-300 rounded focus:ring-hopix-yellow">
-              <label for="checked-checkbox" class="ms-2 text-lg font-medium text-hopix-gray font-primary dark:text-gray-300">Show name</label>
+              <label for="checked-checkbox" class="ms-2 text-lg font-medium text-hopix-gray font-primary dark:text-gray-300">{{ $t('show_name') }}</label>
             </div>
           </div>
         </div>
         <div>
           <button @click="sendReview" class="w-full py-2 mt-6 md:mt-2 text-lg font-medium text-hopix-text-gray bg-hopix-yellow rounded-lg hover:bg-hopix-yellow-dark focus:ring-4 focus:outline-none focus:ring-hopix-yellow-dark dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Submit
+            {{ $t('submit_review') }}
           </button>
         </div>
       </div>
