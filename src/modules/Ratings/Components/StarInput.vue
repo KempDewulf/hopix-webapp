@@ -26,6 +26,7 @@ export default {
   methods: {
     setRating(rating) {
       this.rating = this.rating === rating ? 0 : rating;
+      this.$emit('rating-set', this.rating);
     },
     setHoverRating(rating) {
       this.hoverRating = rating;

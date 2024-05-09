@@ -31,4 +31,18 @@ export default class BeerCardService {
     static async fetchBreweryByBeerId(id) {
         return this.fetchBeerData(`${id}/brewery`);
     }
+
+    static async sendReview(id, review) {
+        const url = `${BASE_URL}/${id}/reviews`;
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'credentials': 'include'
+            },
+            body: JSON.stringify(review),
+            credentials: 'include'
+        });
+        return response.json();
+    }
 }

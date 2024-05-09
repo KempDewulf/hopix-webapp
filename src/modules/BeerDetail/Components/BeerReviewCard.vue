@@ -16,7 +16,7 @@ export default {
 <template>
   <div class="flex flex-col justify-between h-52 w-80 md:w-96 p-3 bg-white border border-gray-200 rounded-lg shadow">
     <div class="flex justify-between">
-      <h1 class="w-1/2 text-hopix-gray text-xl font-primary font-bold whitespace-nowrap overflow-x-hidden text-ellipsis">{{review.user.first_name}}</h1>
+      <h1 class="w-1/2 text-hopix-gray text-xl font-primary font-bold whitespace-nowrap overflow-x-hidden text-ellipsis">{{review.show_username?review.user.first_name:"Anonymous"}}</h1>
       <star-rating rating-link="" amount-of-ratings=0 :rating=review.rating hide-ratings></star-rating>
     </div>
     <div>

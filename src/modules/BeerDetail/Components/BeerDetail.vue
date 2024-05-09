@@ -24,6 +24,11 @@ export default {
       rating: 0,
       aromaList: [],
       imagePath: null,
+      newReview: {
+        rating: 0,
+        review_text: '',
+        show_username: true,
+      }
     }
   },
   computed: {
@@ -41,7 +46,17 @@ export default {
       console.error(`Failed to load image for ${this.slug}:`, error);
       this.imagePath = '';
     }
-  }
+  },
+  methods: {
+    updateRating(rating) {
+      this.newReview.rating = rating;
+    },
+    sendReview() {
+      console.log('Review sent:', this.newReview)
+      this.$emit('review-sent', this.newReview);
+    }
+  },
+
 }
 </script>
 
@@ -123,24 +138,24 @@ export default {
             </h2>
             <div class="mb-6">
               <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Review</label>
-              <textarea id="message" rows="4" maxlength="259" class="md:w-full resize-none block p-2.5 w-full h-36 text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-hopix-yellow focus:border-hopix-yellow" placeholder="Write your thoughts here..."></textarea>
+              <textarea id="message" v-model="newReview.review_text" rows="4" maxlength="259" class="md:w-full resize-none block p-2.5 w-full h-36 text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-hopix-yellow focus:border-hopix-yellow" placeholder="Write your thoughts here..."></textarea>
             </div>
           </div>
           <div class="flex md:inline-block md:mt-20 align-middle md:mx-auto flex-col">
             <div class="">
               <h2>Rating:</h2>
               <div class="py-5 -ml-2.5">
-                <star-input />
+                <star-input @rating-set="updateRating" />
               </div>
             </div>
             <div class="flex items-center w-fit pl-2 mx-auto mt-5">
-              <input checked id="checked-checkbox" type="checkbox" value="" class="w-4 h-4 text-hopix-yellow bg-gray-100 border-gray-300 rounded focus:ring-hopix-yellow">
+              <input checked v-model="newReview.show_username" id="checked-checkbox" type="checkbox" value="" class="w-4 h-4 text-hopix-yellow bg-gray-100 border-gray-300 rounded focus:ring-hopix-yellow">
               <label for="checked-checkbox" class="ms-2 text-lg font-medium text-hopix-gray font-primary dark:text-gray-300">Show name</label>
             </div>
           </div>
         </div>
         <div>
-          <button class="w-full py-2 mt-6 md:mt-2 text-lg font-medium text-hopix-text-gray bg-hopix-yellow rounded-lg hover:bg-hopix-yellow-dark focus:ring-4 focus:outline-none focus:ring-hopix-yellow-dark dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          <button @click="sendReview" class="w-full py-2 mt-6 md:mt-2 text-lg font-medium text-hopix-text-gray bg-hopix-yellow rounded-lg hover:bg-hopix-yellow-dark focus:ring-4 focus:outline-none focus:ring-hopix-yellow-dark dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             Submit
           </button>
         </div>

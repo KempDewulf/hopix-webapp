@@ -25,22 +25,22 @@ export default {
     async fetchBeer() {
       const response = await BeerDetailService.fetchBeerByName(this.$route.params.name);
       this.beer = response.data;
-      console.log(this.beer);
     },
     async fetchReviews() {
       const response = await BeerDetailService.fetchReviewsByBeerId(this.beer.id);
       this.reviews = response.data;
-      console.log(this.reviews);
     },
     async fetchAromas() {
       const response = await BeerDetailService.fetchAromasByBeerId(this.beer.id);
       this.aromas = response.data;
-      console.log(this.aromas);
     },
     async fetchBrewery() {
       const response = await BeerDetailService.fetchBreweryByBeerId(this.beer.id);
       this.brewery = response.data;
-      console.log(this.brewery);
+    },
+    async sendReview(review) {
+      await BeerDetailService.sendReview(this.beer.id, review);
+      await this.fetchReviews();
     }
   }
 }
@@ -49,7 +49,7 @@ export default {
 
 <template>
   <div v-if="beer && brewery">
-    <beer-detail :beer="beer" :brewery="brewery" :aromas="aromas"/>
+    <beer-detail :beer="beer" :brewery="brewery" :aromas="aromas" @review-sent="sendReview"/>
     <beer-review-cards :reviews="reviews"/>
   </div>
 </template>
