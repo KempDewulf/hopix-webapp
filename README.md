@@ -2,6 +2,8 @@
 
 Hopix is a beer rating website.
 Users can discover, rate and review beers from all over Belgium. Site admins can add, edit and remove beers in a backoffice.
+![Screenshot 2024-10-07 161840](https://github.com/user-attachments/assets/904d330e-80d9-4bfd-84f4-a6031826146e)
+
 
 ## Web App
 
