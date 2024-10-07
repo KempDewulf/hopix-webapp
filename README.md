@@ -1,30 +1,40 @@
-# hopix-app
+# Hopix - Web Frameworks Project
 
-This template should help get you started developing with Vue 3 in Vite.
+Hopix is a beer rating website.
+Users can discover, rate and review beers from all over Belgium. Site admins can add, edit and remove beers in a backoffice.
 
-## Recommended IDE Setup
+## Web App
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and
-disable Vetur).
+### Link (local): https://app.hopix.test
 
-## Customize configuration
+### Technologies used:
+- Vue.js
+- Vite
+- Tailwind
+- NPM
+- HTML / CSS / JS
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Available languages:
+- English
+- Dutch
 
-## Project Setup
 
-```sh
-npm install
-```
+### Implented features:
+- Browsing, filtering and searching beers
+- Filter by Brewery and Aroma
+- Sort by name and review score
+- User accounts
+- Leaving reviews
+- Admin backoffice for adding, editing and removing beers.
 
-### Compile and Hot-Reload for Development
+### Not yet implemented:
+- Favoriting / wishlisting beers
+- Account settings
+- Images served from server
+- Managing breweries, aromas etc..
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+### How to deploy locally:
+1. Git pull this repository to your IDE
+2. Install the used technologies
+3. Run the command `npm install` to install the required dependencies
+4. Run the command `npm run dev` to open the web app 
